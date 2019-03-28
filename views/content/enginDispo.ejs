@@ -1,0 +1,29 @@
+<% include ../../header.ejs %>
+                    
+                        <div><h2>Engin disponible</h2></div>
+                        <% if (engins.length > 0) {  for( engin of engins){%>
+                        <div class="row" style="padding: 10px auto;margin:15px auto;">
+                            <div class="col-md-6">
+                                <img src="../images/<%= engin.image %>" class=" imgEngin img-responsive img-rounded">
+                            </div>
+
+                                <div class="col-md-6" style="background:azure;color:black">
+                                        <h5><span style="color:darkgray;">ENGIN n° </span>: <%= engin.id_engin %></h5>
+                                        <h2 style="background:#fff ; text-align: center;color:orange;border-radius: 50px;" >
+                                                <%= engin.categorie %></h2><br>
+                                    
+                                    <div class=" col-sm-12">
+                                        <h5 ><span class="petit_titre_descript">marque</span> : <%= engin.marque %></h5>
+                                        <p><%= engin.description %></p>
+                                        <h5><span class="petit_titre_descript">disponible du</span>:<%= engin.date_debut_dispo %></h5><br>
+                                        <h5><span class="petit_titre_descript">au</span> :<%= engin.date_fin_dispo %></h5>
+                                        <h5><span class="petit_titre_descript">position actuelle</span> : <%= engin.position %></h5>
+                                        <h4><span class="petit_titre_descript">infoline</span> :  M. <%= engin.proprietaire %> au <%= engin.contact %></h4>
+                                        <h5><span style="color:darkgray; text-align: right">Posté le  </span>:<%= engin.date_ajout %> </h5>
+                                    </div>
+
+                                </div>
+                                    
+                        </div><%} } %>
+                        <div><br><br></div>
+                        <% include ../../footer.ejs %>

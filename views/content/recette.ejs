@@ -1,0 +1,36 @@
+<% include ../../header.ejs %>
+<% if(locals.message){%>
+    <div class="alert alert-success" role="alert">
+      <%=locals.message%></div>
+    <%}%>
+                <div><h2>TOP des RECETTES </h2></div>
+
+                <% if(recettes.length>0){ for(recette of recettes){  %>
+                <div class="row" style="  border-radius: 15px;
+                border-top-left-radius: 30px;border-top-right-radius: 30px; 
+                padding: 10px auto;margin:10px auto; text-align: center; ">
+                    <div class="nomRecette" ><h4 style="text-transform:uppercase"><b>---------- <%= recette.nom %> -----------</b></h4></div><br>
+                        <div class="col-md-6">
+                            <img src="../images/<%=recette.image %>" class=" imgEngin  img-responsive img-thumbnail">
+                            <div style="background:azure;color:black; border-radius: 50px" >
+                                    <h3>description </h3><br>
+                                    <p class="colorResult" ><span class="petit_titre_descript">Origine : </span><%= recette.origine %></p>
+                                    <p class="colorResult" ><span class="petit_titre_descript">description : </span><%= recette.description %></p>  
+                                    <p class="colorResult"><span class="petit_titre_descript">categorie : </span><%= recette.categorie %></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 "  style="background:azure;color:black; max-height: 650px;overflow: auto;
+                        border-radius:5px;padding-bottom: 5px;">
+                           
+                            <div>
+                                <h3>-----------En cuisine------------</h3>
+                                <p class="colorResult"><span class="petit_titre_descript">POUR  : </span> <%= recette.nbrepersonne %> personnes<br>
+                                <span class="petit_titre_descript">il nous faut les ingredients suivants : </span><br><br><%= recette.ingredient %><br>
+                                <span class="petit_titre_descript">et la préparation dure : </span><%= recette.duree %><br>
+                                <span class="petit_titre_descript">-Etapes de la préparation : </span><%= recette.preparation %></p>
+                            </div>
+                    </div> 
+                </div><% }} %>
+                
+                   
+<% include ../../footer.ejs %>

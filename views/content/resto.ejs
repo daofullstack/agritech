@@ -1,0 +1,24 @@
+<% include ../../header.ejs %>
+                <div><h2>MEILLEURES STRUCTURES du mois</h2></div>
+                <% if (restaurants.length > 0) {  for( resto of restaurants){%>
+                <div class="row" style="padding: 10px auto;margin:10px auto;">
+                    <div class="col-md-6">
+                        <img src="../images/<%=resto.image %>"  class=" imgEngin img-responsive img-rounded">
+                    </div>
+
+                        <div class="col-md-6" style="background:azure;color:black;
+                         border-radius: 5px;max-height: 350px;overflow: auto;">
+                                <h4><span style="color:darkgray;">  n° </span>:  <%= resto.id_resto %></h4>
+                            <h3 style="text-align:center">----------  <%= resto.nom_resto %>  ---------- </h3>
+                            <h4><span style="color:darkgray;">Categorie </span> : <%= resto.categorie %> </h4>
+                            <div class="col-sm-12" >
+                                    <p><span style="color:darkgray;">Specialité </span> :<%= resto.specialite %></p>
+                                    <h4><span style="color:darkgray;">Est Situé à </span> : <%= resto.commune %> </h4>
+                                    <h4><span style="color:darkgray;">infoline </span>: m. <%= resto.proprietaire %> / <%= resto.contact %></h4>
+                            </div>
+
+                        </div>
+                            
+                </div><%} } %>
+                <div><br><br></div>
+                <% include ../../footer.ejs %>
